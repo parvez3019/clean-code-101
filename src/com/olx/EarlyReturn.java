@@ -12,38 +12,10 @@ public class EarlyReturn {
             newPageContent.append(pageData.getContent());
             includeTeardownPages(testPage, newPageContent, isSuite);
             pageData.setContent(newPageContent.toString());
-        }
-        return pageData.getHtml();
-    }
-
-    public static String renderPageWithSetupAndTeardowns_EarlyReturn(
-            PageData pageData, boolean isSuite
-    ) throws Exception {
-        boolean isTestPage = pageData.hasAttribute();
-        // Early return
-        if (!isTestPage) {
+            return pageData.getHtml();
+        } else {
             return pageData.getHtml();
         }
-        WikiPage testPage = pageData.getWikiPage();
-        StringBuffer newPageContent = new StringBuffer();
-        includeSetupPages(testPage, newPageContent, isSuite);
-        newPageContent.append(pageData.getContent());
-        includeTeardownPages(testPage, newPageContent, isSuite);
-        pageData.setContent(newPageContent.toString());
-        return pageData.toString();
-    }
-
-    public static String renderPageWithSetupAndTeardowns_RefactoredCode(
-            PageData pageData, boolean isSuite
-    ) throws Exception {
-        if (!pageData.hasAttribute()) {
-            return pageData.getHtml();
-        }
-        return includeSetupAndTeardownPages(pageData, isSuite);
-    }
-
-    static String includeSetupAndTeardownPages(PageData pageData, boolean isSuite) {
-        return null;
     }
 
     static class PageData {
