@@ -1,4 +1,4 @@
-package com.olx.IfElse.goodExample;
+package com.olx.polymorphism.goodExample;
 
 import java.util.HashMap;
 import java.util.Map;

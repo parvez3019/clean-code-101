@@ -1,4 +1,4 @@
-package com.olx.IfElse;
+package com.olx.polymorphism;
 
 class Bird {
     final String EUROPEAN = "european";
